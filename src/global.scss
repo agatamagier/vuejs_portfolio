@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,400,700');
+
+$primary: #393939;
+$backgroundGrey: #f7f7f7; 
+$grey: #BAC3C8;
+$darkerGrey: #6e6e6e;
+$deepOrange: #FF5A09;
+$lightOrange: #f3843e;
+$orangeYellow: #ff9900;
+
+body, html {
+    margin: 0;
+    height: 100%;
+}
+body {
+font-family: 'Lato', sans-serif;
+display: grid;
+grid-template-columns: 100%;
+justify-items: center;
+align-items: center;
+background-color: $backgroundGrey;
+grid-template-areas: "maincolumn"
+}
+a {
+    color: $primary;
+    text-decoration: none;
+}
+#app {
+    grid-area: maincolumn;
+    width: 90%;
+    max-width: 1500px;
+    height: 90%;
+    .container {
+      background-color: #fff;
+      box-shadow: 15px 15px 40px lightgray;
+      overflow: hidden;
+      height: 90%;
+      padding: 0;
+      .inner {
+         position: relative;
+         width: 100%;
+         height: 100%;
+         min-height: 100%; 
+         nav {
+            display: grid;
+            grid-template-columns: 200px auto;
+            grid-template-areas: "logo navitems";
+            padding: 50px;
+            position: absolute;
+            z-index: 4;
+            width: 92%;
+            #logo {
+               grid-area: logo;
+               font-weight:  700;
+               color: $darkerGrey;
+               font-size: 1.8em;
+               border-radius: 30px;
+               text-align: center;
+               padding: 5px 0;
+               box-shadow: 0px 3px 10px $lightOrange  ;
+               &:hover {
+                   box-shadow: 0px 5px 14px $lightOrange  ;
+               }
+               span {
+                color: $lightOrange;
+            }
+            }
+            ul {
+                grid-area: navitems;
+                list-style: none;
+                justify-self: right;
+                margin: 0;
+                li {
+                    display: inline;
+                    a {
+                        color: lighten($primary, $amount: 30%);
+
+                        font-size: 1.3em;
+                        text-transform: uppercase;
+                        padding: 0 15px;
+                        font-weight: 700;
+                        text-decoration: overline;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+         }
+      }
+    }
+  }
+  button {
+    background: none;
+    padding: 25px 40px;
+    font-size: 2.7em; 
+    outline: 0;
+    border: 2px solid $lightOrange;
+    letter-spacing: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    
+  }
+  .main-content {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 40% auto;
+      grid-template-areas: "left right";
+      .left-side {
+      padding: 160px 50px 15px 50px;
+      h1 {
+          color: $primary;
+          font-size: 4.8em;
+          line-height: 1.2em;
+          letter-spacing: 2.5px;
+          span {
+              color: $lightOrange;
+          }
+      }
+      }
+      
+      .right-side {
+        background-color: $backgroundGrey;
+        display: grid;
+        grid-template-columns: auto;
+        justify-items: center;
+        align-items: flex-end;
+        
+    
+        a {
+            color: $lightOrange;
+            align-self: center;
+            
+        }
+        p {
+            font-size: 1.6em;
+            padding: 30px 30px;
+            margin: 0 auto;
+            width: 85%;
+            line-height: 1.5em;
+            text-indent: 30px;
+        }
+      }
+  }
+  
+.fade-enter-active {
+    animation: slidePageIn 1s forwards;
+    animation-timing-function: cubic-bezier(.8, -.49, .36, 1);
+}
+.fade-leave-active {
+    animation: slidePageDown 1s forwards;
+    animation-timing-function: cubic-bezier(.8, -.49, .36, 1);
+}
+.footer {
+    color: $lightOrange;
+    font-weight: 400;
+    position: relative;
+    bottom: 30px;
+    letter-spacing: 2px;
+    font-size: 1em;
+
+}
+@keyframes slidePageIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+@keyframes slidePageDown {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+.arrow {
+    width: 43px;
+    position: absolute;
+    right: -21px;
+    opacity: .8;
+}
+.arrow-down {
+    bottom: 100px;
+}
+.arrow-up {
+    display: block;
+    float: right;
+   
+}
+.slideUp {
+    animation: slideUpAnimation 3s forwards;
+    opacity: 0;
+}
+@keyframes slideUpAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 100;
+        transform: translateY(0);
+    }
+}
+.project-info {
+    font-size: 2em;
+    color: #393939;
+    text-indent: 20px;
+    padding-top: 30px;
+}
+.social-media_icons {
+    color: #f3843e;
+    font-size: 35px;
+    cursor: pointer;
+    letter-spacing: 15px;
+  }
+  span {
+      color: $lightOrange;
+  }
